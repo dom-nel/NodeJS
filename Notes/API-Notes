@@ -1,0 +1,53 @@
+// REST API / RESTful API
+
+// REPRESENTATIONAL STATE TRANSFER - APPLICATION PROGRAMMING INTERFACE
+
+// REPRESENTATIONS - Users and Task that are stored in the Database (Models)
+
+// State Transfer - Request that send data from the server client
+					each request contains operation that the user performs,
+					the data that is needed and the authenication
+					
+									GET / 	route (endpoint)
+Client - > needs data   ------------------------------------------> makes a request to a location on the server (route)
+
+Recieves data 		    <------------------------------------------ finds info in the database
+then renders data                   200 - JSON response
+
+With this task app:
+Dr. A needs to create
+a todo (authenicate as 
+Dr. A and does a 				POST (creates data) /tasks - JSON request
+predefined task)	    ------------------------------------------>			confirm identity
+
+recieve and render data <------------------------------------------    create a task
+								201 - JSON response
+								
+Task Resources
+
+CREATE POST /tasks
+
+READ GET /tasks
+	 GET /tasks/:id
+	 
+UPDATE PATCH /task/:id
+
+DELETE DELETE /task/:id
+
+Example: 
+POST /tasks HTTP/1.1
+Accept: application/json
+Connection: Keep-Alive
+Authorization: Bearer asddjhkasjhdfkahfdhgajhfghjlkhasdf
+
+to send: 
+{'description': 'Go practice coding'}
+
+Then you have a response:
+HTTP/1.1 201 created
+Date: Mon, 04 Apr 2022 16:44:22 EST
+Server: Express
+Content-Type: application/json
+
+recieves: 
+{'id': "8465435546asdfjjshdfkjhafldkjh=", 'description': 'Go practice coding', completed: false}
